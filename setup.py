@@ -17,5 +17,5 @@ setup(name="qt_object_viewer",
       version="%d.%d.%d" % version,
       include_package_data=True,
       zip_safe=False,
-      install_requires=[]
+      install_requires=["guidata"]
       )
