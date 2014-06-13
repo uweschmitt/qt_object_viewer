@@ -1,2 +1,3 @@
-from dialog import Dialog
-from object_iter import object_iter, Node, Leaf
+from dialog import ObjectTreeDialog
+from tree_widget import ObjectTreeWidget
+from tree import Node, Leaf

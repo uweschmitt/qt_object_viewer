@@ -1,3 +1,7 @@
-from qt_object_viewer import Dialog
+from qt_object_viewer import ObjectTreeDialog
 
-Dialog(dict(a=3, b=(1, 2))).show()
+from PyQt4.QtGui import QApplication
+app = QApplication([])
+dlg = ObjectTreeDialog([1, 2, 3, dict(a=3, b=4, c=(1, 2, dict(d=(4, 5))))])
+dlg.show()
+app.exec_()

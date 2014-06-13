@@ -1,4 +1,4 @@
-from qt_object_viewer import object_iter, Node, Leaf
+from qt_object_viewer import Node, Leaf
 
 from contextlib import contextmanager
 import cStringIO
@@ -27,20 +27,21 @@ def test_0():
     with capture_output() as get_output:
         tree.print_()
 
+    print get_output()
     assert get_output().strip() == """
-root(dict)
-    a(int) = 3
-    b(tuple)
-        0(int) = 1
-        1(dict)
-            c(int) = 7
-        2(int) = 3
-        3(test_iter.Test)
-            i(int) = 3
-            j(list)
-                0(int) = 1
-                1(int) = 2
-                2(int) = 3
-            k(dict)
-                a(int) = 3
+at -1: root(dict)
+    at 0: a(int) = 3
+    at 1: b(tuple)
+        at 0: (int) = 1
+        at 1: (dict)
+            at 0: c(int) = 7
+        at 2: (int) = 3
+        at 3: (test_iter.Test)
+            at 0: i(int) = 3
+            at 1: j(list)
+                at 0: (int) = 1
+                at 1: (int) = 2
+                at 2: (int) = 3
+            at 2: k(dict)
+                at 0: a(int) = 3
                 """.strip()
