@@ -87,7 +87,12 @@ class ObjectTreeWidget(QTreeView):
         self.setHeaderHidden(False)
 
     def set_root_object(self, root_object):
-        self.setModel(_TreeModel(root_object))
+        self.root_object = root_object
+        self.update()
+
+    def update(self):
+        self.setModel(None)
+        self.setModel(_TreeModel(self.root_object))
 
     def expand_top_level(self):
         for idx in self.model().top_level_indices():
