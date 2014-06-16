@@ -5,7 +5,9 @@ nested object structure.
 
 Example:
 
-<img src="https://github.com/uweschmitt/qt_object_viewer/raw/master/screenshot.png" width="200px" height="200px" />
+<center>
+<img src="https://github.com/uweschmitt/qt_object_viewer/raw/master/screenshot.png"/>
+</center>
 
 ```python
 
