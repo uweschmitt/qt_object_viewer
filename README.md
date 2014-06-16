@@ -5,7 +5,7 @@ nested object structure.
 
 Example:
 
-![Image](../blob/master/screenshot.png?raw=true)
+![Image](https://github.com/uweschmitt/qt_object_viewer/raw/master/screenshot.png)
 
 ```python
 
@@ -14,7 +14,7 @@ from qt_object_viewer import ObjectTreeDialog
 from PyQt4.QtGui import QApplication
 
 app = QApplication([])
-data = dict(name="configuraion",
+data = dict(name="configuration",
             settings=dict(threshold=0.1,
                           iterations=3,
                           inner_loop_params=dict(iterations=5, threshold=.01)
@@ -45,7 +45,7 @@ class MyDialog(QDialog):
         self.vertical_layout.addWidget(self.tree_view)
 
 app = QApplication([])
-data = dict(name="configuraion",
+data = dict(name="configuration",
             settings=dict(threshold=0.1,
                           iterations=3,
                           inner_loop_params=dict(iterations=5, threshold=.01)
