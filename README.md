@@ -5,7 +5,7 @@ nested object structure.
 
 Example:
 
-![Image](https://github.com/uweschmitt/qt_object_viewer/raw/master/screenshot.png)
+<img src="https://github.com/uweschmitt/qt_object_viewer/raw/master/screenshot.png" width="200px" height="200px" />
 
 ```python
 
