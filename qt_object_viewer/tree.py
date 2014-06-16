@@ -12,12 +12,16 @@ def type_to_str(t):
     return match.groups()[0]
 
 
+_do_not_recurse_into = (types.MethodType, types.BuiltinMethodType, types.UnboundMethodType,
+                        types.MemberDescriptorType, types.ClassType, types.TypeType)
+
+
 def interesting_attributes(obj):
     for name in dir(obj):
         value = getattr(obj, name)
         if name.startswith("_"):
             continue
-        if isinstance(value, (types.MethodType, types.BuiltinMethodType, types.UnboundMethodType)):
+        if isinstance(value, _do_not_recurse_into):
             continue
         yield name, value
 
@@ -56,7 +60,9 @@ class Node(object):
         type_as_str = type_to_str(type(obj))
         if isinstance(obj, (int, float, basestring)):
             return Leaf(parent, type_as_str, name, obj)
-        else:  # elif isinstance(obj, (list, tuple, set, dict)):
+        else:
+            if isinstance(obj, _do_not_recurse_into):
+                return Leaf(parent, type_as_str, name, obj)
             result = clz(parent, type_as_str, name)
             children = []
             if isinstance(obj, (list, tuple)):
