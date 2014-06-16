@@ -17,7 +17,7 @@ def interesting_attributes(obj):
         value = getattr(obj, name)
         if name.startswith("_"):
             continue
-        if isinstance(value, types.MethodType):
+        if isinstance(value, (types.MethodType, types.BuiltinMethodType, types.UnboundMethodType)):
             continue
         yield name, value
 
